@@ -287,3 +287,77 @@ body { background-color: #F9F3E7; color: #313131; }
     color: #777;
     line-height: 1.3;
 }
+/* Ekranın sağa-sola qaçmasını tam dayandırır */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bütün elementlərin ölçüsünü daxildə saxlayır */
+* {
+    box-sizing: border-box;
+}
+
+/* MENYU ÜÇÜN MOBİL AYARLAR */
+@media (max-width: 768px) {
+    /* Sol və Sağ paneli alt-alta yox, yan-yana amma dar saxlayırıq */
+    .menu-wrapper {
+        display: flex;
+        flex-direction: row; 
+    }
+
+    .sidebar {
+        width: 100px; /* Sol menyunu mobildə kiçilt */
+        min-width: 100px;
+        font-size: 12px;
+    }
+
+    .tab-link {
+        padding: 10px 5px; /* Düymələr mobildə daha kiçik olsun */
+        text-align: center;
+    }
+
+    .content {
+        flex: 1; /* Qalan bütün yeri sağ tərəfə ver */
+        padding: 10px;
+        min-width: 0; /* Yazıların daşmasını önləyir */
+    }
+
+    /* Yemək kartlarının mobil görünüşü */
+    .food-item {
+        display: flex;
+        flex-direction: row; /* Şəkil və yazı yan-yana qalsın */
+        padding: 8px;
+        gap: 10px;
+    }
+
+    .food-img-box {
+        width: 40px; /* Mobildə emojilər/şəkillər kiçilsin */
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .food-header {
+        flex-direction: column; /* Ad və qiymət mobildə alt-alta düşsün ki, yer daralmasın */
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .food-name {
+        font-size: 14px;
+        line-height: 1.2;
+        word-break: break-word; /* Uzun sözləri parçalayır */
+    }
+
+    .food-price {
+        font-size: 13px;
+        color: #d35400;
+    }
+
+    .food-desc {
+        font-size: 11px;
+        margin-top: 5px;
+    }
+}
