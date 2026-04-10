@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* EKRA SIDDIRMA VƏ DAŞMA QAYDALARI (SİLMƏ) */
+        * { 
+            box-sizing: border-box; /* Padding və border-in ölçünü böyütməsini əngəlləyir */
+        }
+        
+        html, body {
+            overflow-x: hidden; /* Sağa qaçmanı tamamilə bağlayır */
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-wrapper {
+            display: flex;
+            width: 100vw;
+            overflow: hidden; /* Konteyner daxilində daşmanı əngəlləyir */
+        }
+
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            max-width: calc(100% - 120px); /* Sidebar-dan qalan hissəyə məcbur sıxışdırır */
+        }
+
+        img {
+            max-width: 100%; /* Şəkillər çərçivədən böyük ola bilməz */
+            height: auto;
+        }
+
         /* Seçilmiş butonun SARI olması üçün vacib kod */
         .tab-link.active {
             background-color: #FFCD00 !important;
@@ -150,7 +179,7 @@
                     <div class="food-details"><div class="food-header"><span class="food-name">Ananas / Ананас (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
                 </div>
                 <div class="food-item">
-                    <div class="food-img-box">🥝</div>
+                    <div class="food-img-box"> kiwi </div>
                     <div class="food-details"><div class="food-header"><span class="food-name">Kivi / Киви (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
                 </div>
                 <div class="food-item">
@@ -169,6 +198,7 @@
 
             <div id="seher" class="tab-content">
                 <h3 style="margin-bottom: 15px;">🍳 Səhər Yeməyi</h3>
+                <div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div>
                 <div class="food-item" style="border: 2px solid #FFCD00; border-radius: 12px; padding: 15px; margin-bottom: 15px; display: flex; flex-direction: column; align-items: center;">
                     <div style="width: 100%; max-width: 350px; margin-bottom: 15px;">
                         <img src="seher-yemeyi.png" alt="Əncir Səhər Seti" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; border: 2px solid #FFCD00; display: block;">
@@ -254,9 +284,5 @@
             document.querySelector('.content').scrollTop = 0;
         }
     </script>
-
-</body>
-</html>
-
 </body>
 </html>
