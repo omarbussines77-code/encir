@@ -36,12 +36,22 @@ body { background-color: #F9F3E7; color: #313131; }
 .menu-wrapper { display: flex; height: calc(100vh - 65px); }
 .sidebar { width: 40%; background-color: #313131; overflow-y: auto; }
 .tab-link { 
-    width: 100%; padding: 15px; border: none; background: none; 
-    color: #eee; text-align: left; font-size: 13px; border-bottom: 1px solid #444; 
+    width: 100%; 
+    padding: 15px; 
+    border: none; 
+    background: #313131; /* Düymənin fonu tünd */
+    color: #eee; /* Yazı rəngi açıq */
+    text-align: left; 
+    font-size: 13px; 
+    border-bottom: 1px solid #444; 
+    cursor: pointer;
 }
-.tab-link.active { background-color: #FFCD00; color: #313131; font-weight: 700; }
-.content { width: 60%; background-color: #F9F3E7; overflow-y: auto; padding: 20px; }
-.tab-content { display: none; } 
+
+.tab-link.active { 
+    background-color: #FFCD00 !important; /* Seçiləndə sarı */
+    color: #313131 !important; /* Seçiləndə yazı qara */
+    font-weight: 700; 
+}
 /* --- ƏLAQƏ SƏHİFƏSİ STİLLƏRİ --- */
 .contact-wrapper {
     padding: 20px;
