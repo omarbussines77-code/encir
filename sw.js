@@ -2,7 +2,13 @@ const CACHE_NAME = 'restoran-menyu-v1';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
-  '/style.css'
+  '/menu.html',
+  '/contact.html',
+  '/order.html',
+  '/social.html',
+  '/style.css',
+  '/logo.png',
+  '/seher-yemeyi.png'
 ];
 
 self.addEventListener('install', (event) => {
