@@ -287,77 +287,94 @@ body { background-color: #F9F3E7; color: #313131; }
     color: #777;
     line-height: 1.3;
 }
-/* Ekranın sağa-sola qaçmasını tam dayandırır */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+/* --- YENİ LOQO VƏ ANA SƏHİFƏ ÜÇÜN ƏLAVƏLƏR --- */
+
+.logo-custom-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 45px;
+    margin-bottom: 20px;
+    animation: pulseLogo 3s infinite ease-in-out;
+}
+
+.logo-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-title-encir {
+    font-size: 32px;
+    font-weight: 800;
+    color: #FFCD00;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     margin: 0;
-    padding: 0;
 }
 
-/* Bütün elementlərin ölçüsünü daxildə saxlayır */
-* {
-    box-sizing: border-box;
+.logo-subtitle-rest {
+    background-color: #000;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 3px 15px;
+    border-radius: 50px;
+    margin-top: 2px;
 }
 
-/* MENYU ÜÇÜN MOBİL AYARLAR */
-@media (max-width: 768px) {
-    /* Sol və Sağ paneli alt-alta yox, yan-yana amma dar saxlayırıq */
-    .menu-wrapper {
-        display: flex;
-        flex-direction: row; 
-    }
+.logo-custom-wrap::before,
+.logo-custom-wrap::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 150"><path fill="%23FFCD00" d="M20,10 C10,10 0,20 0,40 C0,60 10,70 20,70 L20,10 Z M20,80 C10,80 0,90 0,110 C0,130 10,140 20,140 L20,80 Z"/></svg>');
+}
 
-    .sidebar {
-        width: 100px; /* Sol menyunu mobildə kiçilt */
-        min-width: 100px;
-        font-size: 12px;
-    }
+.logo-custom-wrap::before { left: 0; }
+.logo-custom-wrap::after { right: 0; transform: rotate(180deg); }
 
-    .tab-link {
-        padding: 10px 5px; /* Düymələr mobildə daha kiçik olsun */
-        text-align: center;
-    }
+@keyframes pulseLogo {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
 
-    .content {
-        flex: 1; /* Qalan bütün yeri sağ tərəfə ver */
-        padding: 10px;
-        min-width: 0; /* Yazıların daşmasını önləyir */
-    }
+/* Ana səhifə düyməsi və fonu */
+.home-body {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
 
-    /* Yemək kartlarının mobil görünüşü */
-    .food-item {
-        display: flex;
-        flex-direction: row; /* Şəkil və yazı yan-yana qalsın */
-        padding: 8px;
-        gap: 10px;
-    }
+.menu-button {
+    display: inline-block;
+    background-color: #FFCD00;
+    color: #000;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(255, 205, 0, 0.3);
+}
+.home-container h2 {
+    margin-top: 40px !important;    /* Loqo ilə yazı arasındakı məsafə */
+    margin-bottom: 40px !important; /* Yazı ilə düymə arasındakı məsafə */
+    display: block !important;
+    line-height: 1.5;               /* Yazının öz sətir aralığı */
+}
 
-    .food-img-box {
-        width: 40px; /* Mobildə emojilər/şəkillər kiçilsin */
-        height: 40px;
-        font-size: 20px;
-    }
-
-    .food-header {
-        flex-direction: column; /* Ad və qiymət mobildə alt-alta düşsün ki, yer daralmasın */
-        align-items: flex-start;
-        gap: 2px;
-    }
-
-    .food-name {
-        font-size: 14px;
-        line-height: 1.2;
-        word-break: break-word; /* Uzun sözləri parçalayır */
-    }
-
-    .food-price {
-        font-size: 13px;
-        color: #d35400;
-    }
-
-    .food-desc {
-        font-size: 11px;
-        margin-top: 5px;
-    }
+/* Əgər "Xoş gəlmisiniz" yazısı hələ də düyməyə çox yaxındırsa, bu kodu da əlavə et */
+.menu-button {
+    margin-top: 20px !important;
 }
