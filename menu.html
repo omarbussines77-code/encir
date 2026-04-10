@@ -7,95 +7,233 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #fdfaf3; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+        /* Seçilmiş butonun SARI olması üçün vacib kod */
         .tab-link.active {
             background-color: #FFCD00 !important;
             color: #313131 !important;
             font-weight: bold;
             border-right: 4px solid #000;
         }
-        .tab-content { display: none; animation: fadeIn 0.3s ease; padding: 15px; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* Servis haqqı dizaynı */
         .service-info {
             background: #313131;
             color: #FFCD00;
-            padding: 10px 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            font-size: 13px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 11px;
             font-weight: bold;
             display: flex;
             align-items: center;
-            border-left: 5px solid #FFCD00;
-        }
-        
-        /* Şəkil və mətn bloku */
-        .food-item-special {
-            border: 2px solid #FFCD00;
-            border-radius: 15px;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
+            border-left: 4px solid #FFCD00;
         }
     </style>
 </head>
 <body>
 
-    <header class="mini-header" style="background: #fff; padding: 15px; display: flex; align-items: center; border-bottom: 1px solid #ddd;">
-        <a href="index.html" class="back-btn" style="text-decoration: none; font-size: 20px; margin-right: 15px;">⬅</a>
-        <h3 style="color: #313131; margin: 0;">ƏNCİR MENYU</h3>
+    <header class="mini-header">
+        <a href="index.html" class="back-btn">⬅</a>
+        <h3 style="color: #313131;">ƏNCİR MENYU</h3>
     </header>
 
-    <div class="menu-wrapper" style="display: flex;">
+    <div class="menu-wrapper">
         
-        <div class="sidebar" style="width: 30%; max-width: 150px; background: #fff; height: calc(100vh - 60px); overflow-y: auto; border-right: 1px solid #eee;">
-            <button class="tab-link active" onclick="openCat(event, 'seher')">🍳 Səhər Yeməyi</button>
+        <div class="sidebar">
+            <button class="tab-link active" onclick="openCat(event, 'xususi')">🌟 Xüsusi Menyu</button>
             <button class="tab-link" onclick="openCat(event, 'limonad')">🍋 Limonadlar</button>
+            <button class="tab-link" onclick="openCat(event, 'seher')">🍳 Səhər Yeməyi</button>
+            <button class="tab-link" onclick="openCat(event, 'gurcu_seher')">🇬🇪 Gürcü Səhər Y.</button>
+            <button class="tab-link" onclick="openCat(event, 'soyuq_qel')">🥗 Soyuq Qəlyanaltılar</button>
+            <button class="tab-link" onclick="openCat(event, 'isti_qel')">🥘 İsti Qəlyanaltılar</button>
+            <button class="tab-link" onclick="openCat(event, 'salatlar')">🥗 Salatlar</button>
+            <button class="tab-link" onclick="openCat(event, 'sorbalar')">🥣 Şorbalar</button>
+            <button class="tab-link" onclick="openCat(event, 'toyuq')">🍗 Toyuq Yeməkləri</button>
+            <button class="tab-link" onclick="openCat(event, 'et')">🥩 Ət Yeməkləri</button>
+            <button class="tab-link" onclick="openCat(event, 'sac')">🥘 Saclar</button>
+            <button class="tab-link" onclick="openCat(event, 'baliq')">🐟 Balıq Yeməkləri</button>
             <button class="tab-link" onclick="openCat(event, 'kabablar')">🍢 Kabablar</button>
-            </div>
+            <button class="tab-link" onclick="openCat(event, 'xemir')">🥟 Xəmir Yeməkləri</button>
+            <button class="tab-link" onclick="openCat(event, 'kuku')">🍳 Kükülər</button>
+            <button class="tab-link" onclick="openCat(event, 'plovlar')">🍚 Plovlar</button>
+            <button class="tab-link" onclick="openCat(event, 'qarnir')">🍟 Qarnirlər</button>
+            <button class="tab-link" onclick="openCat(event, 'pizzalar')">🍕 Pizzalar</button>
+            <button class="tab-link" onclick="openCat(event, 'fastfood')">🍟 Fast Food</button>
+            <button class="tab-link" onclick="openCat(event, 'burgerler')">🍔 Burgerlər</button>
+            <button class="tab-link" onclick="openCat(event, 'pide')">🥙 Lahmacun & Pide</button>
+            <button class="tab-link" onclick="openCat(event, 'roll')">🌯 Rol və Dürümlər</button>
+            <button class="tab-link" onclick="openCat(event, 'pastalar')">🍝 Pastalar</button>
+            <button class="tab-link" onclick="openCat(event, 'gurcu_metbex')">🇬🇪 Gürcü Mətbəxi</button>
+            <button class="tab-link" onclick="openCat(event, 'xencel')">🥟 Gürcü Xəngəli</button>
+            <button class="tab-link" onclick="openCat(event, 'xacapuri')">🥧 Xaçapurilər</button>
+            <button class="tab-link" onclick="openCat(event, 'desertler')">🍰 Desertlər</button>
+            <button class="tab-link" onclick="openCat(event, 'cerezer')">🥜 Çərəzlər</button>
+            <button class="tab-link" onclick="openCat(event, 'dondurma')">🍦 Dondurmalar</button>
+            <button class="tab-link" onclick="openCat(event, 'murebbe')">🍯 Mürəbbələr</button>
+            <button class="tab-link" onclick="openCat(event, 'qehveler')">☕ Qəhvələr</button>
+            <button class="tab-link" onclick="openCat(event, 'soyuq_cay')">🍹 Soyuq Çaylar</button>
+            <button class="tab-link" onclick="openCat(event, 'soyuq_ickiler')">🥤 Soyuq İçkilər</button>
+            <button class="tab-link" onclick="openCat(event, 'sireler')">🍊 Təbii Şirələr</button>
+            <button class="tab-link" onclick="openCat(event, 'sumuzi')">🥤 Sumuzilər</button>
+            <button class="tab-link" onclick="openCat(event, 'kokteyl')">🍹 Kokteyllər</button>
+            <button class="tab-link" onclick="openCat(event, 'pive')">🍺 Pivə və Mezələr</button>
+        </div>
 
-        <div class="content" style="flex: 1; height: calc(100vh - 60px); overflow-y: auto;">
+        <div class="content">
 
-            <div id="seher" class="tab-content" style="display:block;">
-                <h3 style="color: #d35400;">🍳 Səhər Yeməyi / Завтрак</h3>
-                
-                <div class="food-item-special">
-                    <img src="seher-yemeyi.png" alt="Əncir Səhər Seti" style="width: 100%; max-width: 400px; border-radius: 12px; margin-bottom: 15px;">
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                        <span style="font-size: 1.2rem; font-weight: bold; color: #313131;">ƏNCİR SƏHƏR SETİ (2 nəfərlik)</span>
-                        <span style="background: #313131; color: #FFCD00; padding: 5px 12px; border-radius: 8px; font-weight: bold;">30.00 AZN</span>
-                    </div>
-
-                    <div style="text-align: left; font-size: 14px; color: #444; line-height: 1.6;">
-                        <strong>Tərkibi:</strong> Pomidor, xiyar, bal, qaymaq, şor, 4 növ pendir, sosis (Halal), 2 növ kolbasa (Halal), kərə yağı, əncir mürəbbəsi, zeytun, meyvələr, Nutella, fəsəli və s.
-                        <br><br>
-                        <strong>Əsas yemək (2 seçim):</strong> Pomidor-yumurta, sucuqlu yumurta, qayğanaq, kükü və ya göz yumurta.
-                        <br><br>
-                        <span style="display: block; text-align: center; color: #27ae60; font-weight: bold; background: #e8f5e9; padding: 10px; border-radius: 8px;">✨ Çay və çörək limitsizdir!</span>
-                    </div>
-                    
-                    <hr style="border: 0; border-top: 1px dashed #ccc; margin: 20px 0;">
-                    
-                    <div style="text-align: left; font-style: italic; font-size: 13px; color: #666;">
-                        <strong>ИНЖИР УТРЕННИЙ СЕТ (на двоих):</strong> 
-                        Помидоры, огурцы, мед, сливки, творог, 4 вида сыра, сосиски (Халяль), 2 вида колбасы (Халяль), сливочное масло, инжирное варенье, оливки, сезонные фрукты, Нутелла, фасали и др.
-                    </div>
-                </div>
+            <div id="xususi" class="tab-content" style="display:block;">
+                <h3>🌟 Xüsusi Menyu</h3>
+                <div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div>
+                <p style="text-align: center; padding: 20px;">Xüsusi təkliflərimiz tezliklə burada.</p>
             </div>
 
             <div id="limonad" class="tab-content">
                 <h3>🍋 Limonadlar / Лимонады</h3>
-                <div class="service-info">🔔 Diqqət: Qiymətlərə 10% servis xidməti əlavə olunacaq.</div>
+                <div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div>
+                
+                <div class="food-item">
+                    <div class="food-img-box">🍃</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Tərxun / Тархун (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
                 </div>
-
-            <div id="kabablar" class="tab-content">
-                <h3>🍢 Kabablar</h3>
-                <div class="service-info">🔔 Diqqət: Qiymətlərə 10% servis xidməti əlavə olunacaq.</div>
+                <div class="food-item">
+                    <div class="food-img-box">🍐</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Armud / Дюшес (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🍉</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Qarpız / Арбуз (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🍒</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Giləmeyvə / Ягодный (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🥭</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Manqo / Манго (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🌴</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Marakuya / Маракуйя (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🫐</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Zirinc / Барбарис (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🌿</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Reyhan / Базилик (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🍓</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Çiyələk / Клубника (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🍊</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Portağal / Апельсин (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🍦</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Vanil / Ваниль (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🟣</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Bənövşə / Фиалка (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🌵</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Aloe / Алоэ (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🍍</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Ananas / Ананас (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🥝</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Kivi / Киви (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🍎</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Alma / Яблоко (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🟢</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Feyxoa / Фейхоа (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
+                <div class="food-item">
+                    <div class="food-img-box">🍋</div>
+                    <div class="food-details"><div class="food-header"><span class="food-name">Limon / Лимон (300 ml)</span><span class="food-price">6.00 AZN</span></div></div>
+                </div>
             </div>
+
+            <div id="seher" class="tab-content">
+                <h3 style="margin-bottom: 15px;">🍳 Səhər Yeməyi</h3>
+                <div class="food-item" style="border: 2px solid #FFCD00; border-radius: 12px; padding: 15px; margin-bottom: 15px; display: flex; flex-direction: column; align-items: center;">
+                    <div style="width: 100%; max-width: 350px; margin-bottom: 15px;">
+                        <img src="seher-yemeyi.png" alt="Əncir Səhər Seti" style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; border: 2px solid #FFCD00; display: block;">
+                    </div>
+                    <div class="food-details" style="width: 100%;">
+                        <div class="food-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <span class="food-name" style="font-size: 1.1rem; color: #d35400; font-weight: bold;">ƏNCİR SƏHƏR SETİ (2 nəfərlik)</span>
+                            <span class="food-price" style="background: #313131; color: #FFCD00; padding: 4px 10px; border-radius: 8px; font-weight: 900;">30.00 AZN</span>
+                        </div>
+                        <div class="food-desc" style="font-size: 13px; color: #333; line-height: 1.5;">
+                            <strong>Tərkibi:</strong> Pomidor, xiyar, bal, qaymaq, şor, 4 növ pendir, sosis (Halal), 
+                            2 növ kolbasa (Halal), kərə yağı, əncir mürəbbəsi, zeytun (qara və yaşıl), 
+                            mövsüm meyvələri, fındıq əzməsi, vafli, siqara börəyi, şokolad yağı (Nutella), fəsəli, südlü aş (sütlac).
+                            <br><br>
+                            <strong>Əsas yemək (2 seçim):</strong> Pomidor-yumurta, sucuqlu yumurta, qayğanaq, kükü və ya göz yumurta.
+                            <br><br>
+                            <span style="display: block; text-align: center; color: #27ae60; font-weight: bold; background: #e8f5e9; padding: 8px; border-radius: 6px; border: 1px solid #27ae60;">✨ Çay və çörək limitsizdir!</span>
+                        </div>
+                        <div style="margin: 15px 0; border-top: 1px dashed #ccc;"></div>
+                        <div class="food-desc" style="font-style: italic; font-size: 12px; color: #666;">
+                            <strong>ИНЖИР УТРЕННИЙ СЕТ (на двоих):</strong> 
+                            Помидоры, огурцы, мед, сливки, творог, 4 вида сыра, сосиски (Халяль), 
+                            2 вида колбасы (Халяль), сливочное масло, инжирное варенье, оливки, сезонные фрукты, 
+                            ореховая паста, вафли, сигара борек, Нутелла, фасали, сютлач.
+                            <br>
+                            <strong>Основное блюдо (2 на выбор):</strong> Яичница с помидорами, с колбасой, омлет, кюкю или глазунья. Чай и хлеб без лимита.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gurcu_seher" class="tab-content"><h3>🇬🇪 Gürcü Səhər Y.</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="soyuq_qel" class="tab-content"><h3>🥗 Soyuq Qəlyanaltılar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="isti_qel" class="tab-content"><h3>🥘 İsti Qəlyanaltılar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="salatlar" class="tab-content"><h3>🥗 Salatlar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="sorbalar" class="tab-content"><h3>🥣 Şorbalar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="toyuq" class="tab-content"><h3>🍗 Toyuq Yeməkləri</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="et" class="tab-content"><h3>🥩 Ət Yeməkləri</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="sac" class="tab-content"><h3>🥘 Saclar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="baliq" class="tab-content"><h3>🐟 Balıq Yeməkləri</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="kabablar" class="tab-content"><h3>🍢 Kabablar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="xemir" class="tab-content"><h3>🥟 Xəmir Yeməkləri</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="kuku" class="tab-content"><h3>🍳 Kükülər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="plovlar" class="tab-content"><h3>🍚 Plovlar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="qarnir" class="tab-content"><h3>🍟 Qarnirlər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="pizzalar" class="tab-content"><h3>🍕 Pizzalar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="fastfood" class="tab-content"><h3>🍟 Fast Food</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="burgerler" class="tab-content"><h3>🍔 Burgerlər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="pide" class="tab-content"><h3>🥙 Lahmacun & Pide</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="roll" class="tab-content"><h3>🌯 Rol və Dürümlər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="pastalar" class="tab-content"><h3>🍝 Pastalar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="gurcu_metbex" class="tab-content"><h3>🇬🇪 Gürcü Mətbəxi</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="xencel" class="tab-content"><h3>🥟 Gürcü Xəngəli</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="xacapuri" class="tab-content"><h3>🥧 Xaçapurilər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="desertler" class="tab-content"><h3>🍰 Desertlər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="cerezer" class="tab-content"><h3>🥜 Çərəzlər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="dondurma" class="tab-content"><h3>🍦 Dondurmalar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="murebbe" class="tab-content"><h3>🍯 Mürəbbələr</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="qehveler" class="tab-content"><h3>☕ Qəhvələr</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="soyuq_cay" class="tab-content"><h3>🍹 Soyuq Çaylar</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="soyuq_ickiler" class="tab-content"><h3>🥤 Soyuq İçkilər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="sireler" class="tab-content"><h3>🍊 Təbii Şirələr</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="sumuzi" class="tab-content"><h3>🥤 Sumuzilər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="kokteyl" class="tab-content"><h3>🍹 Kokteyllər</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
+            <div id="pive" class="tab-content"><h3>🍺 Pivə və Mezələr</h3><div class="service-info">📢 Qiymətlərə 10% servis xidməti əlavə olunacaq.</div></div>
 
         </div>
     </div>
@@ -113,8 +251,12 @@
             }
             document.getElementById(catName).style.display = "block";
             evt.currentTarget.classList.add("active");
+            document.querySelector('.content').scrollTop = 0;
         }
     </script>
+
+</body>
+</html>
 
 </body>
 </html>
