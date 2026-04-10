@@ -412,10 +412,10 @@ html, body {
 }
 
 .sidebar {
-    width: 120px; /* Sidebar enini sabit saxlayırıq */
-    flex-shrink: 0; /* Sidebar-ın sıxılmasını maneə törədir */
+    width: 120px;
+    flex-shrink: 0;
     overflow-y: auto;
-    background: #f8f8f8;
+    background-color: #313131; /* Bu rəng qara-boz edir */
 }
 
 .content {
